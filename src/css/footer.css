@@ -1,0 +1,22 @@
+.footer {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer p{
+    color: black;
+    font-size: 14px;
+}
+
+.policy-link{
+    font-size: 14px;
+    text-decoration: none;
+    color: rgb(49, 49, 255);
+    margin: 5px 0;
+    cursor: pointer;;
+}

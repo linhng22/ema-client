@@ -1,0 +1,34 @@
+.news-container > .h2{
+    margin: 10px auto;
+    color: red;
+}
+
+.news-header{
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 50% 50%;
+    width: 55vw;
+}
+
+.news-title{
+    outline: 1px solid #bbb;
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+    line-height: 40px;
+    font-size: 15px;
+    width: 1;
+}
+
+.news-title:hover{
+    outline: 1.5px solid #95e1d3;
+    box-shadow: 0 6px 4px -3px #95e1d3;
+    transition: outline 0.1s, box-shadow 0.3s;
+}
+
+.editor-container{
+    width: 75%;
+    height: 430px;
+    margin: 10px auto;
+}

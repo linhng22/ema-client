@@ -1,0 +1,178 @@
+/* Google font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body, input, button {
+    margin: 0;
+    font-family: 'Nunito' sans-serif;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.home {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto;
+    margin-bottom: 30px;
+}
+
+/* Slides css starts here */
+.slides {
+    grid-row: 1;
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    max-height: 100%;
+    width: 60vw;
+}
+
+.images-wrapper {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 95%;
+    margin: 3vh auto;
+}
+
+.home-image {
+    height: 68vh;
+    width: auto;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    border-radius: 25px;
+}
+
+
+.text-slider {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    height: max-content;
+}
+
+.bullets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.bullets span {
+    display: block;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: #aaa;
+    margin: 0 0.25rem;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.bullets span.active{
+    width: 1.1rem;
+    background-color: #151111;
+    border-radius: 1rem;
+}
+/* Slides css ends here */
+
+/* News css starts here */
+.news{
+    grid-column: 2;
+    grid-row: 1;
+    text-align: left;
+    margin: 20px 10px 5px 10px;
+    padding: 0 4vw 0 0  ;
+    max-height: 900px;
+}
+
+.news-heading{
+    text-align: center;
+}
+
+.news-card-time{
+    font-size: 12px;
+    margin: 5px;
+    color: #808080;
+}
+
+.big-line{
+    height: 5px;
+    width: 100%;
+    background-color: #95e1d3;
+    margin: 5px 0 10px 0;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover{
+    color: darkblue;
+    transition: color 0.4s;
+}
+
+.link{
+    color:#f2663c;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.news-card-content > *{
+    font-size: 15px;
+    padding: 5px;
+}
+
+hr{
+    border-top: 1px dotted #808080;
+    border-bottom: none;
+    margin: 10px 0;
+}
+
+/* News css ends here */
+
+
+/* Contact css starts here */
+.contact-container{
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    width: 60%;
+    max-width: 750px;
+    margin: 60px auto 10px auto;
+    border: 5px double #95e1d3;
+    border-radius: 20px;
+    box-shadow: 0 30px 20px -15px #ccc;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.contact-header{
+    color: #151111;
+}
+
+.contact-details{
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.contact-icon{
+    width: 22px;
+    margin-right: 10px;
+}
+
+/* Contact css ends here */

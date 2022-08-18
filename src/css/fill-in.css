@@ -1,0 +1,172 @@
+/* Google font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Nunito' sans-serif;
+}
+
+.fill-in-container{
+    min-height: 80vh;
+    height: 100vh;
+    padding: 0 10px;
+}
+
+.canvas-box{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 80% ;
+    grid-template-rows: 100%;
+    margin: auto 0;
+}
+
+.canvas{
+    text-align: center;
+    margin: auto 0px;
+}
+
+#canvas1 {
+    width: auto;
+    max-width: 100%;
+    height: 85vh;
+    border-radius: 1.5rem;
+}
+
+.guide-box{
+    margin: 8vh 0;
+    font-size: 15px;
+}
+
+.guide-box p {
+    color: #000;
+}
+
+.fill-in-form{
+    margin-top: 6vh;
+    font-size: 17px;
+}
+
+.icon {
+    width: 40px;
+    height: auto;
+    margin: 5px auto;
+    cursor: pointer;
+    display: block;
+}
+
+.icon.guide{
+    margin-top: 6vh;
+}
+
+.fill-in-question span {
+    font-weight: 600;
+} 
+
+.fill-in-answer {
+    outline: 0.2px solid #000;
+    border: none;
+    padding-left: 5px;
+    border-radius: 5px;
+    min-height: 40px;
+    font-size: 15px;
+    margin: 5px auto;
+}
+
+.fill-in-answer:hover {
+    outline: 1px solid #f2663c;
+}
+
+.pop-up{
+    text-align: center;
+    width: 45%;
+    max-width: 600px;
+    min-height: 25vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: 0;
+    margin-top: 0;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 15px;
+    padding: 0 20px;
+    box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+}
+
+.big-icon{
+    width: 100px;
+    margin-top: -40px;
+}
+
+.face{
+    display: block;
+    width: 70px;
+    margin: 5px auto;
+}
+
+.pop-up h2 {
+    color: #f2663c;
+    margin: 10px auto;
+}
+
+.pop-up p{
+    color: #000;
+}
+
+button {
+    font-size: 16px;
+    border: none;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.guide.btn{
+    background-color: #c2c0c0;
+    margin: 20px 0 20px 15px;
+}
+
+.backToQuiz{
+    background-color: #c2c0c0;
+    margin: 20px;
+}
+
+.guide.pop-up{
+    left: 60%
+}
+
+.fill-in {
+    display: block;
+    margin: 10px auto;
+}
+
+.hint{
+    font-size: 13px;
+    margin: 15px;
+    color: grey;
+    padding: 0 10px;
+}
+
+/* css for progress bar starts here */
+.progress-bar-container{
+    font-size: 17px;
+    margin-bottom: 6vh;
+    margin-left: 5%;
+}
+.progress-bar{
+    position: relative;
+    height: 5vh;
+    width: attr(width);
+    background-color: #95e1d3;
+    border-radius: 17px;
+    color: #fff;
+}
+
+.progress-bar::before{
+    content: attr(datalabel);
+    position: absolute;
+    top: 20%;
+    left: 7%;
+}
+/* css for progress bar ends here */

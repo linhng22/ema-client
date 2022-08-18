@@ -1,0 +1,122 @@
+/* Google font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body, input, button {
+    margin: 0;
+    font-family: 'Nunito' sans-serif;
+}
+
+.quiz-header{
+    height: 100px;
+    width: max-content;
+    padding: 20px;
+    font-size: 18px;
+    background-color: #fff;
+    border-radius: 30px;
+    margin: 0 auto;
+}
+
+.quiz{
+    min-height: 95vh;
+}
+
+.quiz-links{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: 30vh 2vw 0 auto;
+    max-width: 1000px;
+}
+
+.link-instruction-character{
+    display: flex;
+    flex-direction: row;
+}
+
+.link-box{
+    width: 200px;
+    border-radius: 50%;
+    background-color: rgb(140, 8, 140);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 21px;
+}
+
+.link-box:hover{
+    background-color: rgb(220, 220, 220);
+    color: #000;
+    box-shadow: 0 6px 4px -3px #000;
+    transition: all 0.3s;
+}
+
+.game-character{
+    margin: 5px auto;
+    cursor: pointer;
+}
+
+.game-character:hover{
+    scale: 1.2;
+    transition: scale 0.3s;
+}
+
+#character1{
+    width: 15.5vw;
+    max-width: 300px;
+    margin-left: 10px;
+}
+
+#character2{
+    width: 8vw;
+    max-width: 160px;
+    margin-top: 5px;
+}
+
+.instruction{
+    width: 150px;
+    text-align: center;
+    background-color: rgb(140, 8, 140);
+    color: #fff;
+    position:relative;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 17px;
+    height: fit-content;
+}
+
+.left{
+    margin-top: 60px;
+}
+
+.left:before {
+    content: "";
+    width: 10px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid rgb(140, 8, 140);
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgb(140, 8, 140);
+    border-top: 10px solid transparent;
+    right: -15px;
+    top: 9px;
+}
+
+.right{
+    margin-top: 70px;
+}
+
+.right::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-right: 10px solid rgb(140, 8, 140);
+    border-left: 10px solid transparent;
+    border-top: 10px solid rgb(140, 8, 140);
+    border-bottom: 10px solid transparent;
+    left: -15px;
+    top: 90px;
+}
