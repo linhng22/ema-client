@@ -24,7 +24,7 @@ export default function Home(props) {
 
     // Get data from backend and shuffle the answer data once
     if (!loaded) {
-        axios.get("http://localhost:8000/").then(response => {
+        axios.get("https://tienganhcoan.herokuapp.com/").then(response => {
             // Save 5 most recent news to the newsData
             for (let i = response.data.length; i > response.data.length - 3; i--) {
                 if (response.data[i - 1]){

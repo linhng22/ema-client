@@ -19,7 +19,7 @@ function App() {
 
   // Send "Get" request to the server to know if user accessing website is regular or admin user.
   if (!admin){
-    axios.get("http://localhost:8000/starting").then(res => {
+    axios.get("https://tienganhcoan.herokuapp.com/starting").then(res => {
       setAdmin(res.data.isAdmin);
     })
   }

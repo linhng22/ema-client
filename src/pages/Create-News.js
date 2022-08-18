@@ -38,7 +38,7 @@ export default function CreateTest(props) {
     
     // Get data from backend and shuffle the answer data once
     if (!loaded) {
-        axios.get("http://localhost:8000/create-news").then(response => {
+        axios.get("https://tienganhcoan.herokuapp.com/create-news").then(response => {
             setNewsData(response.data);
             loaded = true;
         });
@@ -69,7 +69,7 @@ export default function CreateTest(props) {
         e.preventDefault();
         setConfirmation(false);
 
-        axios.post("http://localhost:8000/create-news", newsData ).then((res) => {
+        axios.post("https://tienganhcoan.herokuapp.com/create-news", newsData ).then((res) => {
             console.log(res);
             setDisplayMessage(true);
         })

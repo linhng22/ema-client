@@ -46,7 +46,7 @@ export default function SignIn(props) {
         
         const dataToSend = [userName, password];
         // Send "POST" request to the server
-        axios.post("http://localhost:8000/sign-in", dataToSend).then((res) => {
+        axios.post("https://tienganhcoan.herokuapp.com/sign-in", dataToSend).then((res) => {
             console.log(res);
             if (res.data.success){
                 // If authentication is sucessful, update "text" and "signedIn", and pass isAdmin property to the parent component
@@ -65,7 +65,7 @@ export default function SignIn(props) {
     
     // Send "GET" request to the server when admin user wants to sign out from website
     function signOut(){
-        axios.get("http://localhost:8000/sign-out").then(response => {
+        axios.get("https://tienganhcoan.herokuapp.com/sign-out").then(response => {
             console.log(response);
             setSignedIn(false);
             setText(null);

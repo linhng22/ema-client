@@ -22,7 +22,7 @@ export default function News(props) {
 
     // Get news from the server
     if (!loaded){
-        axios.get("http://localhost:8000/").then(response => {
+        axios.get("https://tienganhcoan.herokuapp.com/").then(response => {
             // Save all news to allNews variable. All news will be displayed on "Bảng tin" page
             setAllNews(response.data);
             // Save specific news to newsWithId and other news to otherNews variable

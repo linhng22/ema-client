@@ -115,7 +115,7 @@ export default function CreateTest(props) {
             },
             answerData];
         // Send data to the server to be saved
-        axios.post("http://localhost:8000/create-test", dataToSend ).then((res) => {
+        axios.post("https://tienganhcoan.herokuapp.com/create-test", dataToSend ).then((res) => {
             console.log(res);
             alert("Đề kiểm tra ngắn đã được tạo thành công!");
             if (!alert("Đề kiểm tra ngắn đã được tạo thành công!")){

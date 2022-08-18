@@ -22,7 +22,7 @@ export default function DragDrop() {
 
     // Get data from backend and shuffle the answer data once
     if (!loaded) {
-        axios.get("/quiz/drag-drop").then(response => {
+        axios.get("https://tienganhcoan.herokuapp.com/quiz/drag-drop").then(response => {
             const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
             setQuestionData(response.data.questionData);
             setAnswerData(shuffle(response.data.answerData));
