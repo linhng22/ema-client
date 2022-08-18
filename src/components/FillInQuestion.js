@@ -10,6 +10,8 @@ var hint1 = 'Nếu chưa chắc chắn về câu trả lời, đừng nhấn "En
 var hint2 = 'Chính xác! Nhấn "Enter" hoặc dấu mũi tên nhé!';
 var hint3 = 'Chưa đúng rồi! Cố lên!';
 
+axios.defaults.withCredentials = true;
+
 export default function FillInQuestion(props) {
     const [questionData, setQuestionData] = useState({
         maxTime: -1,

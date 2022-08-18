@@ -11,6 +11,8 @@ import guideIcon from "../../images/info.png"
 import sadFace2 from "../../images/sad2.png"
 var loaded = false;
 
+axios.defaults.withCredentials = true;
+
 export default function DragDrop() {
     const [questionData, setQuestionData] = useState({
         maxTime: -1,

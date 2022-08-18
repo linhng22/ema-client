@@ -7,6 +7,8 @@ import confirmIcon from "../images/confirm.png"
 import congrat from "../images/congrat.png"
 var loaded = false;
 
+axios.defaults.withCredentials = true;
+
 export default function CreateTest(props) {
     const [newsData, setNewsData] = useState([]);
     const [news, setNews] = useState({

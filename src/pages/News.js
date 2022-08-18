@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 import "../css/news.css";
 var loaded = false;
 
+axios.defaults.withCredentials = true;
+
 export default function News(props) {
     const [allNews, setAllNews] = useState([]);
     const [otherNews, setOtherNews] = useState([]);

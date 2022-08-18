@@ -16,6 +16,8 @@ var text2 = "Nội dung bám sát chương trình phổ thông, nhu cầu ngư�
 var text3 = "Trang bị toàn bộ 4 kỹ năng Nghe - Nói - Đọc - Viết";
 var loaded = false;
 
+axios.defaults.withCredentials = true;
+
 export default function Home(props) {
     const [newsData, setNewsData] = useState([]);
     const [image, setImage] = useState(image1);

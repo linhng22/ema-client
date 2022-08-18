@@ -7,6 +7,8 @@ import warningIcon from "../images/warning.png"
 import confirmIcon from "../images/confirm.png"
 var warning1="Chỉ nhập chữ số!";
 
+axios.defaults.withCredentials = true;
+
 export default function CreateTest(props) {
     const [num, setNum] = useState(2); // the number of questions
     const [questionData, setQuestionData] = useState({
