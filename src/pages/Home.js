@@ -25,13 +25,13 @@ export default function Home(props) {
     const [num, setNum] = useState(1);
 
     console.log(newsData);
-    
+
     // Get data from backend and shuffle the answer data once
-    if (!loaded) {
+    if (!loaded && newsData.length < 3) {
         axios.get("https://tienganhcoan.herokuapp.com/").then(response => {
             // Save 3 most recent news to the newsData
             for (let i = response.data.length; i > response.data.length - 3; i--) {
-                if (response.data[i - 1] && newsData.length < 3){
+                if (response.data[i - 1]){
                     setNewsData(prevData => ([
                         ...prevData,
                         response.data[i - 1]
