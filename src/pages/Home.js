@@ -29,7 +29,7 @@ export default function Home(props) {
         axios.get("https://tienganhcoan.herokuapp.com/").then(response => {
             // Save 3 most recent news to the newsData
             for (let i = response.data.length; i > response.data.length - 3; i--) {
-                if (response.data[i - 1] && newsData.length < 5){
+                if (response.data[i - 1] && newsData.length < 3){
                     setNewsData(prevData => ([
                         ...prevData,
                         response.data[i - 1]
