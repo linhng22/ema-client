@@ -25,8 +25,9 @@ export default function Home(props) {
     const [num, setNum] = useState(1);
 
     console.log(newsData);
+    console.log(loaded);
 
-    // Get data from backend and shuffle the answer data once
+    // Get data from backend
     if (!loaded && newsData.length < 3) {
         axios.get("https://tienganhcoan.herokuapp.com/").then(response => {
             // Save 3 most recent news to the newsData
