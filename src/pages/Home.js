@@ -24,12 +24,8 @@ export default function Home(props) {
     const [text, setText] = useState(text1);
     const [num, setNum] = useState(1);
 
-    useEffect(() => {
-        if (newsData.length > 2){
-            loaded = true;
-        }
-    }, [newsData.length]);
-
+    console.log(newsData);
+    
     // Get data from backend and shuffle the answer data once
     if (!loaded) {
         axios.get("https://tienganhcoan.herokuapp.com/").then(response => {
