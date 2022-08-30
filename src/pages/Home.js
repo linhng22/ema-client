@@ -28,7 +28,7 @@ export default function Home(props) {
     console.log(loaded);
 
     // Get data from backend
-    if (!loaded && newsData.length < 3) {
+    if (!loaded && newsData.length < 2) {
         axios.get("https://tienganhcoan.herokuapp.com/").then(response => {
             // Save 3 most recent news to the newsData
             for (let i = response.data.length; i > response.data.length - 3; i--) {
@@ -46,6 +46,7 @@ export default function Home(props) {
        
     // Map all the news as cards
     const newsCards = newsData.map(card => {
+        console.log(card);
         return (
             <NewsCard 
                 key={card.id}
