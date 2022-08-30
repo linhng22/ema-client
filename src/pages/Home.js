@@ -28,7 +28,7 @@ export default function Home(props) {
         if (newsData.length > 2){
             loaded = true;
         }
-    }, [newsData]);
+    }, [newsData.length]);
 
     // Get data from backend and shuffle the answer data once
     if (!loaded) {
