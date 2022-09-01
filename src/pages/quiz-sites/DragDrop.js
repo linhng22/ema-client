@@ -93,7 +93,7 @@ export default function DragDrop() {
         if (item.matched) {
             count++;
         };
-        if (isLoaded && count === questionData.questions.length) {
+        if (questionData.questions && count === questionData.questions.length) {
             finished = true;
         } 
     })
