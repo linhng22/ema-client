@@ -35,17 +35,21 @@ export default function DragDrop() {
     console.log(questionData);
     
     //Map all the questions as cards
-    const questionCards = questionData.questions.map(card => {
-        return (
-            <Question 
-                key={card.id}
-                question={card.question}
-                id={card.id}
-                onDrop = {id => updateData(id)}
-                answerData={answerData}
-            />
-        )
-    });
+    const questionCards = () => {
+        if (questionData.questions) {
+            questionData.questions.map(card => {
+            return (
+                <Question 
+                    key={card.id}
+                    question={card.question}
+                    id={card.id}
+                    onDrop = {id => updateData(id)}
+                    answerData={answerData}
+                />
+            )
+            })
+        }
+    };
     
     //Map all the answers as cards in random order
     const answerCards = answerData.map(card => {
