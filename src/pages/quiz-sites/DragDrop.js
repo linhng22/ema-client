@@ -21,12 +21,12 @@ export default function DragDrop() {
     const [answerData, setAnswerData] = useState([]);
     const [guideBox, setGuideBox] = useState(false);
     const [timeOut, setTimeout] = useState(false);
-    // const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
 
-    // useEffect(() => {
-    //     if (questionData.questions && answerData)
-    //         setIsLoaded(true);
-    // }, [questionData, answerData]);
+    useEffect(() => {
+        if (questionData.questions && answerData)
+            setIsLoaded(true);
+    }, [questionData, answerData]);
     // console.log(isLoaded);
 
     // Get data from backend and shuffle the answer data once
@@ -41,7 +41,7 @@ export default function DragDrop() {
     
     //Map all the questions as cards
     const questionCards = ()=>{
-        if (questionData.questions){
+        if (isLoaded){
             questionData.questions.map(card => {
                 return (
                     <Question 
@@ -93,7 +93,7 @@ export default function DragDrop() {
         if (item.matched) {
             count++;
         };
-        if (questionData.questions && count === questionData.questions.length) {
+        if (isLoaded && count === questionData.questions.length) {
             finished = true;
         } 
     })
@@ -108,7 +108,6 @@ export default function DragDrop() {
                             opacity: (guideBox) ? "0.2" : "1"}}>
                         <h2>Questions</h2>
                         <div className="question-box">
-                            {/* {isLoaded ? questionCards : ""} */}
                             {questionCards}
                         </div>
                 </div>
@@ -119,7 +118,6 @@ export default function DragDrop() {
                             opacity: (guideBox) ? "0.2" : "1"}}>
                         <h2>Answers</h2>
                         <div className="answer-box">
-                            {/* {isLoaded ? answerCards : ""} */}
                             {answerCards}
                         </div>
                 </div>
