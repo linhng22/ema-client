@@ -21,13 +21,13 @@ export default function DragDrop() {
     const [answerData, setAnswerData] = useState([]);
     const [guideBox, setGuideBox] = useState(false);
     const [timeOut, setTimeout] = useState(false);
-    const [isLoaded, setIsLoaded] = useState(false);
+    // const [isLoaded, setIsLoaded] = useState(false);
 
-    useEffect(() => {
-        if (questionData.questions && answerData)
-            setIsLoaded(true);
-    }, [questionData, answerData]);
-    console.log(isLoaded);
+    // useEffect(() => {
+    //     if (questionData.questions && answerData)
+    //         setIsLoaded(true);
+    // }, [questionData, answerData]);
+    // console.log(isLoaded);
 
     // Get data from backend and shuffle the answer data once
     if (!loaded) {
@@ -40,17 +40,22 @@ export default function DragDrop() {
     }
     
     //Map all the questions as cards
-    const questionCards = questionData.questions.map(card => {
-        return (
-            <Question 
-                key={card.id}
-                question={card.question}
-                id={card.id}
-                onDrop = {id => updateData(id)}
-                answerData={answerData}
-            />
-        )
-    });
+    const questionCards = ()=>{
+        if (questionData.questions){
+            questionData.questions.map(card => {
+                return (
+                    <Question 
+                        key={card.id}
+                        question={card.question}
+                        id={card.id}
+                        onDrop = {id => updateData(id)}
+                        answerData={answerData}
+                    />
+                )
+            });
+        } else return (<></>);
+        
+    }
     
     //Map all the answers as cards in random order
     const answerCards = answerData.map(card => {
@@ -103,7 +108,8 @@ export default function DragDrop() {
                             opacity: (guideBox) ? "0.2" : "1"}}>
                         <h2>Questions</h2>
                         <div className="question-box">
-                            {isLoaded ? questionCards : ""}
+                            {/* {isLoaded ? questionCards : ""} */}
+                            {questionCards}
                         </div>
                 </div>
 
@@ -113,7 +119,8 @@ export default function DragDrop() {
                             opacity: (guideBox) ? "0.2" : "1"}}>
                         <h2>Answers</h2>
                         <div className="answer-box">
-                            {isLoaded ? answerCards : ""}
+                            {/* {isLoaded ? answerCards : ""} */}
+                            {answerCards}
                         </div>
                 </div>
 

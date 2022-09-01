@@ -43,7 +43,6 @@ export default function Home(props) {
        
     // Map all the news as cards
     const newsCards = newsData.map(card => {
-        console.log(card);
         return (
             <NewsCard 
                 key={card.id}
