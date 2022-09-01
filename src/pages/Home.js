@@ -24,9 +24,6 @@ export default function Home(props) {
     const [text, setText] = useState(text1);
     const [num, setNum] = useState(1);
 
-    console.log(newsData);
-    console.log(loaded);
-
     // Get data from backend
     if (!loaded && newsData.length < 2) {
         axios.get("https://tienganhcoan.herokuapp.com/").then(response => {

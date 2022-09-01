@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useEffect, useState } from "react";
 import axios from "axios"
 import "../../css/drag-drop.css"
 import Question from "../../components/DragDropQuestion"
@@ -21,6 +21,13 @@ export default function DragDrop() {
     const [answerData, setAnswerData] = useState([]);
     const [guideBox, setGuideBox] = useState(false);
     const [timeOut, setTimeout] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        if (questionData.questions && answerData)
+            setIsLoaded(true);
+    }, [questionData, answerData]);
+    console.log(isLoaded);
 
     // Get data from backend and shuffle the answer data once
     if (!loaded) {
@@ -96,7 +103,7 @@ export default function DragDrop() {
                             opacity: (guideBox) ? "0.2" : "1"}}>
                         <h2>Questions</h2>
                         <div className="question-box">
-                            {loaded ? questionCards : ""}
+                            {isLoaded ? questionCards : ""}
                         </div>
                 </div>
 
@@ -106,7 +113,7 @@ export default function DragDrop() {
                             opacity: (guideBox) ? "0.2" : "1"}}>
                         <h2>Answers</h2>
                         <div className="answer-box">
-                            {loaded ? answerCards : ""}
+                            {isLoaded ? answerCards : ""}
                         </div>
                 </div>
 
