@@ -31,25 +31,19 @@ export default function DragDrop() {
             loaded = true
         });
     }
-
-    console.log(questionData);
     
     //Map all the questions as cards
-    const questionCards = () => {
-        if (questionData.questions) {
-            questionData.questions.map(card => {
-            return (
-                <Question 
-                    key={card.id}
-                    question={card.question}
-                    id={card.id}
-                    onDrop = {id => updateData(id)}
-                    answerData={answerData}
-                />
-            )
-            })
-        }
-    };
+    const questionCards = questionData.questions.map(card => {
+        return (
+            <Question 
+                key={card.id}
+                question={card.question}
+                id={card.id}
+                onDrop = {id => updateData(id)}
+                answerData={answerData}
+            />
+        )
+    });
     
     //Map all the answers as cards in random order
     const answerCards = answerData.map(card => {
@@ -102,7 +96,7 @@ export default function DragDrop() {
                             opacity: (guideBox) ? "0.2" : "1"}}>
                         <h2>Questions</h2>
                         <div className="question-box">
-                            {questionCards}
+                            {loaded ? questionCards : ""}
                         </div>
                 </div>
 
@@ -112,7 +106,7 @@ export default function DragDrop() {
                             opacity: (guideBox) ? "0.2" : "1"}}>
                         <h2>Answers</h2>
                         <div className="answer-box">
-                            {answerCards}
+                            {loaded ? answerCards : ""}
                         </div>
                 </div>
 
