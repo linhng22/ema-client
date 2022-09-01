@@ -26,7 +26,7 @@ export default function DragDrop() {
     useEffect(() => {
         if (questionData.questions && answerData)
             setIsLoaded(true);
-    }, [questionData.questions.length, answerData.length]);
+    }, [questionData.questions, answerData]);
     // console.log(isLoaded);
 
     // Get data from backend and shuffle the answer data once
