@@ -31,6 +31,8 @@ export default function DragDrop() {
             loaded = true
         });
     }
+
+    console.log(questionData);
     
     //Map all the questions as cards
     const questionCards = questionData.questions.map(card => {
