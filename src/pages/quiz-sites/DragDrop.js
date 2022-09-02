@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from "react";
+import React, {useState } from "react";
 import axios from "axios"
 import "../../css/drag-drop.css"
 import Question from "../../components/DragDropQuestion"
@@ -21,13 +21,6 @@ export default function DragDrop() {
     const [answerData, setAnswerData] = useState([]);
     const [guideBox, setGuideBox] = useState(false);
     const [timeOut, setTimeout] = useState(false);
-    const [isLoaded, setIsLoaded] = useState(false);
-
-    useEffect(() => {
-        if (questionData.questions && answerData)
-            setIsLoaded(true);
-    }, [questionData.questions, answerData]);
-    // console.log(isLoaded);
 
     // Get data from backend and shuffle the answer data once
     if (!loaded) {
@@ -40,22 +33,17 @@ export default function DragDrop() {
     }
     
     //Map all the questions as cards
-    const questionCards = ()=>{
-        if (isLoaded){
-            questionData.questions.map(card => {
-                return (
-                    <Question 
-                        key={card.id}
-                        question={card.question}
-                        id={card.id}
-                        onDrop = {id => updateData(id)}
-                        answerData={answerData}
-                    />
-                )
-            });
-        } else return (<></>);
-        
-    }
+    const questionCards = questionData.questions.map(card => {
+        return (
+            <Question 
+                key={card.id}
+                question={card.question}
+                id={card.id}
+                onDrop = {id => updateData(id)}
+                answerData={answerData}
+            />
+        )
+    });
     
     //Map all the answers as cards in random order
     const answerCards = answerData.map(card => {
@@ -93,7 +81,7 @@ export default function DragDrop() {
         if (item.matched) {
             count++;
         };
-        if (questionData.questions && count === questionData.questions.length) {
+        if (count === questionData.questions.length) {
             finished = true;
         } 
     })
