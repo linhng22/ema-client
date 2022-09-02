@@ -14,42 +14,39 @@ import address from "../images/address.png";
 var text1 = "Các lớp học dành cho mọi độ tuổi";
 var text2 = "Nội dung bám sát chương trình phổ thông, nhu cầu người học";
 var text3 = "Trang bị toàn bộ 4 kỹ năng Nghe - Nói - Đọc - Viết";
-var loaded = false;
+
+var data = [];
+// Get data from backend
+if (data.length === 0){
+     axios.get("https://tienganhcoan.herokuapp.com/").then(response => {
+        // Save 3 most recent news to the newsData
+        for (let i = response.data.length; i > response.data.length - 3; i--) {
+            if (response.data[i - 1]){
+                data.push(response.data[i - 1]);
+            }
+        }
+    })
+}
 
 axios.defaults.withCredentials = true;
 
 export default function Home(props) {
-    const [newsData, setNewsData] = useState([]);
     const [image, setImage] = useState(image1);
     const [text, setText] = useState(text1);
     const [num, setNum] = useState(1);
 
-    // Get data from backend
-    if (!loaded && newsData.length < 2) {
-        axios.get("https://tienganhcoan.herokuapp.com/").then(response => {
-            // Save 3 most recent news to the newsData
-            for (let i = response.data.length; i > response.data.length - 3; i--) {
-                if (response.data[i - 1]){
-                    setNewsData(prevData => ([
-                        ...prevData,
-                        response.data[i - 1]
-                    ]));
-                }
-            }
-        }).then(() => {
-            loaded = true;
-        });    
-    }
        
     // Map all the news as cards
-    const newsCards = newsData.map(card => {
+    const newsCards = data.map(news => {
+        const content = news.content.split('.');
+        const firstSentence = content[0] + "." + content[1] + ".";
         return (
             <NewsCard 
-                key={card.id}
-                id={card.id}
-                time={card.time}
-                title={card.title}
-                content={card.content}
+                key={news.id}
+                id={news.id}
+                time={news.time}
+                title={news.title}
+                content={firstSentence}
             />
         )
     });
@@ -108,7 +105,7 @@ export default function Home(props) {
                         <div className="big-line"></div>
                     </div>
                     
-                    <div className="news-container">{newsData.length > 0 ? newsCards : ""}</div>
+                    <div className="news-container">{data.length > 0 ? newsCards : ""}</div>
                 </div>
 
                 <div className="contact-container">

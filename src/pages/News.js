@@ -62,8 +62,8 @@ export default function News(props) {
 
     // Display all news as cards
     const allNewsCards = allNews.map(news => {
-        const content = news.content.split('. ');
-        const firstSentence = content[0] + `<div class='more'><button class='more-btn'><a href='/news/${news.id}'>Xem thêm</a></button></div>`;
+        const content = news.content.split('.');
+        const firstSentence = content[0] + "." + content[1] + "." + `<div class='more'><button class='more-btn'><a href='/news/${news.id}'>Xem thêm</a></button></div>`;
         return (
             <div className="news-card all-news" key={news.id}>
                 <div style={{textAlign: "left", marginBottom: "10px"}}>
